@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet">
+    <title>Text Util App</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                       id="navbarDropdown" role="button">
+                        Dropdown
+                    </a>
+                    <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a aria-disabled="true" class="nav-link disabled" href="#" tabindex="-1">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    <strong>Welcome to Text Utils!</strong> Reformat ur entries
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+</div>
+<div class="container-fluid">
+    <form action="analyze" method="post"> {% csrf_token %}
+        <div class="row ">
+            <h1>Enter Your Text Here!</h1>
+            <div class="col-12">
+                <textarea class="pd-3" name="text" rows="10" style="width:100%"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" name="removepun" type="checkbox" id="flexSwitchCheckChecked" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Remove Punctuation</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" name="capitalize" type="checkbox" id="flexSwitchCheckChecked" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Capitalize</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" name="caplock" type="checkbox" id="flexSwitchCheckChecked" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Caplock</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" name="newlineremover" type="checkbox" id="flexSwitchCheckChecked" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">New Line Remover</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" name="charcount" type="checkbox" checked disabled id="flexSwitchCheckChecked" >
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Character Count</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-info">Anayze Text</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script crossorigin="anonymous"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

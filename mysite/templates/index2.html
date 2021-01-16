@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+</head>
+<body>
+<h1 style="text-align:center">Enter Your Text Below</h1>
+<form action="/analyze" method="get">
+    <textarea name="text" rows="10" style="width:95%"></textarea><br>
+    <input name="removepun" type="checkbox">Remove Punctuation<br>
+    <input name="capitalize" type="checkbox">Capitalize<br>
+    <input name="caplock" type="checkbox">Caplock<br>
+    <input checked disabled name="newlineremover" type="checkbox">New Line Remover<br>
+    <input checked disabled name="charcount" type="checkbox">Character Count<br>
+    <button type="submit">Anayze Text</button>
+</form>
+</body>
+</html>
